@@ -5,10 +5,12 @@ deploy:
     manifests:
       - ./infra/k8s/*
 build:
-  local:
-    push: false
+  googleCloudBuild:
+    projectId: norse-case-339600
+  #local:
+  #  push: false
   artifacts:
-    - image: thiagosgdev/auth
+    - image: sa.gcr.io/norse-case-339600/auth
       context: auth
       docker:
         dockerfile: Dockerfile
